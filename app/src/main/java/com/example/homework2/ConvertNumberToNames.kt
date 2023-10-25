@@ -37,7 +37,7 @@ class ConvertNumberToNames {
             return tens[n / 10] + units[n % 20]
         }
         return if (n < 1000) {
-            hundreds[n / 100] + convert(n % 100)
+            hundreds[n / 100]  + " " + convert(n % 100)
         }else{
             "არასწორი ციფრი!!!"
         }
