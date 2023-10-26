@@ -16,8 +16,11 @@ class MainActivity : AppCompatActivity() {
         val inputVal = findViewById<EditText>(R.id.editTextNumber).text
 
         findViewById<AppCompatButton>(R.id.execButt).setOnClickListener(){
-            findViewById<AppCompatTextView>(R.id.numberName).text = ConvertNumberToNames().convert(inputVal.toString().toInt())
+            if(inputVal.isNullOrBlank()) {
+                findViewById<AppCompatTextView>(R.id.numberName).text = "გთხოვთ ჩაწეროთ ციფრი!!!"
+            }else{
+                findViewById<AppCompatTextView>(R.id.numberName).text = ConvertNumberToNames().convert(inputVal.toString().toInt())
+            }
         }
-
     }
 }
